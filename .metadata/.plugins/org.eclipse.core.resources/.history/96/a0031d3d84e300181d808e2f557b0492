@@ -1,0 +1,27 @@
+package Cadastro_Disciplina;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Conexao {
+	//bloco estatico de inicialização
+	static {
+		//tentando estabelecer uma conexão via postgres 
+		//baixar a JDBC do MySql, para usar no PC do serviço ou em casa
+		try {
+			Class.forName("org.postgresql.Driver");
+			//Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static Connection getConnection() throws SQLException{
+		Connection conn;
+		//conn = DriverManager.getConnection("jdbc:mysql://localhost/java_sgbd","root","123456");
+		conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/dblivros","postgres","123456");
+		//conn = DriverManager.getConnection("jdbc:postgresql://localhost/java_sgbd","root","123456");
+		return conn;
+	}
+}

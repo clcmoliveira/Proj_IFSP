@@ -1,0 +1,39 @@
+package Cadastro_Disciplina;
+
+import java.awt.*;
+import javax.swing.*;
+import java.sql.*;
+
+public class Principal {
+
+	public static void main(String[] args) throws SQLException {
+		/*	Passo 1 - Testar Conexão	*/
+		
+		/*Connection conn = Conexao.getConnection();
+		if (conn != null) {
+			System.out.println("Conectou!");
+		} else {
+			System.out.println("Não Conectou!");
+		}*/
+		
+		/*Passo 2 - Após confirmada a conexão, exibir o painel inicial	*/
+		
+		JFrame frame = new JFrame("Cadastro de Disciplinas");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		String text = "Olá Usuário";
+		JTextArea textarea = new JTextArea(text);
+		textarea.setPreferredSize(new Dimension(800, 600));
+	    textarea.setLineWrap(true);
+	    textarea.setWrapStyleWord(true);
+
+	    JScrollPane scrollPane = new JScrollPane(textarea,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+	        JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+	    frame.add(scrollPane);
+	    frame.pack();
+	    frame.setVisible(true);
+
+	}
+
+}

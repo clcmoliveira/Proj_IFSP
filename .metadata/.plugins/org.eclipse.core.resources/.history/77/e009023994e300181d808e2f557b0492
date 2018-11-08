@@ -1,0 +1,14 @@
+package Cadastro_Disciplina;
+
+import javax.swing.*;
+
+public class Frame {
+	private void formDisciplina(){
+		private JLabel ldis, lcar, lcur, l_qt, lper;
+		ldis = new JLabel ("Nome da disciplina:");
+		lcar = new JLabel ("Carga horaria:"); 
+		lcur = new JLabel ("Curso que ela pertence:"); 
+		l_qt = new JLabel ("Número de vagas:");
+		lper = new JLabel ("Período: Noturno");
+	}
+}

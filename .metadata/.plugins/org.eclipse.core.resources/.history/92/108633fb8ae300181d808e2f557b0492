@@ -1,0 +1,27 @@
+package Cadastro_Disciplina;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class main {
+
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Cadastro de Disciplinas");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		String text = "Hello World";
+		JTextArea textarea = new JTextArea(text);
+		textarea.setPreferredSize(new Dimension(300, 150));
+	    textarea.setLineWrap(true);
+	    textarea.setWrapStyleWord(true);
+
+	    JScrollPane scrollPane = new JScrollPane(textAreal,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
+	        JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+	    frame.add(scrollPane);
+	    frame.pack();
+	    frame.setVisible(true);
+
+	}
+
+}
