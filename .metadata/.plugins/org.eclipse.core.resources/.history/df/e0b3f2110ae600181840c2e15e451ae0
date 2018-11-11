@@ -1,7 +1,7 @@
 //******************************************************
-//Instituto Federal de São Paulo - Campus Sertãozinho
+//Instituto Federal de Sï¿½o Paulo - Campus Sertï¿½ozinho
 //Disciplina......: M3LPBD
-//Programação de Computadores e Dispositivos Móveis
+//Programaï¿½ï¿½o de Computadores e Dispositivos Mï¿½veis
 //Aluno...........: CAMILA LEITE COURA MARIANO DE OLIVEIRA
 //******************************************************
 
@@ -10,13 +10,11 @@ package Cadastro_Disciplina;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import java.util.List;
-
 import javax.swing.*;
 
 public class Frame implements ActionListener {
-    /* Passo 1 - Definir os padrões
-     * OBJETIVO - Definir as variáveis globais, aquelas que serão 
+    /* Passo 1 - Definir os padrï¿½es
+     * OBJETIVO - Definir as variï¿½veis globais, aquelas que serï¿½o 
      * utilizadas em todos os frames
      */
     private String title = "Cadastro de Disciplinas";
@@ -32,12 +30,12 @@ public class Frame implements ActionListener {
     private JButton save_dis, show_cad, show_list;
 	
     /* Passo 2 - Mostrar o Menu Principal
-     * OBJETIVO: Exibi-la após a conexão com o Banco
+     * OBJETIVO: Exibi-la apï¿½s a conexï¿½o com o Banco
      */
     void principal() {
         lshow = new JLabel("<html>"
                 + "<h3>Bem Vindo!</h3>"
-                + "<br>Selecione a opção de sua preferência:"
+                + "<br>Selecione a opï¿½ï¿½o de sua preferï¿½ncia:"
                 + "</html>");
         show_cad = new JButton ("Cadastrar Disciplina");
         show_list = new JButton ("Visualizar Disciplinas");
@@ -56,16 +54,16 @@ public class Frame implements ActionListener {
     
     /*
     *   Passo 3 - Exibir o cadastro de Disciplinas
-    *   Objetivo: Após selecionar o botão de 
+    *   Objetivo: ApÃ³s selecionar o botÃ£o de 
     *   Cadastro de Disciplinas, exibir esta tela
     */
 
     void formDisciplina(){
         ldis = new JLabel("Nome da Disciplina: ");
-        lcar = new JLabel("Carga Horária");
+        lcar = new JLabel("Carga HorÃ¡ria");
         lcur = new JLabel("Curso que ela pertence:");
-        lnum = new JLabel("Número de vagas:");
-        lper = new JLabel("Período:");
+        lnum = new JLabel("Nï¿½mero de vagas:");
+        lper = new JLabel("Perï¿½odo:");
         tfdis = new JTextField(20);
         tfcar = new JTextField(20);
         tfcur = new JTextField(20);
@@ -96,13 +94,16 @@ public class Frame implements ActionListener {
     }
 
     void listDisciplina() {
-        List<Disciplina> lista = new Funcoes().listar();
-    	panel.add((Component) lista);
-        panel.add(ldis);
-        panel.add(lcar);
-        panel.add(lcur);
-        panel.add(lnum);
-        panel.add(lper);
+        Disciplina d = new Disciplina();
+        int i, j;
+		
+        for(i = 0; i < 10; i++) {
+            panel.add(ldis);
+            panel.add(lcar);
+            panel.add(lcur);
+            panel.add(lnum);
+            panel.add(lper);
+	}
         dim = new Dimension(300,300);
         panel.setPreferredSize(dim);
 		
