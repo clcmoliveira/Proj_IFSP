@@ -1,0 +1,23 @@
+package Cadastro_Disciplina;
+
+import java.sql.*;
+
+public class Principal {
+
+	public static void main(String[] args) throws SQLException {
+		/*	Passo 1 - Testar Conexão	*/
+		
+		/*Connection conn = Conexao.getConnection();
+		if (conn != null) {
+			System.out.println("Conectou!");
+		} else {
+			System.out.println("Não Conectou!");
+		}*/
+		
+		/*	Passo 2 - Após confirmada a conexão, exibir o painel inicial	*/
+		//new Frame().formDisciplina();
+		
+		new Frame().principal();
+	}
+
+}

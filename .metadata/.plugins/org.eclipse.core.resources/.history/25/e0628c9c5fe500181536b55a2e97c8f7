@@ -1,0 +1,85 @@
+package Cadastro_Disciplina;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+
+public class Frame implements ActionListener {
+
+	private JLabel ldis, lcar, lcur, l_qt, lper, lshow;
+	private JTextField tfdis, tfcar, tfcur, tf_qt, tfper;
+	private JButton button, show_cad, show_list;
+	private JPanel panel;
+	private JFrame frame;
+	private JScrollPane scrollPane;
+	
+	void principal() {
+		lshow = new JLabel("Bem Vindo!\n Selecione a opção de sua preferência");
+		show_cad = new JButton ("Cadastrar Disciplina");
+		show_list = new JButton ("Visualizar Disciplinas");
+		
+		panel = new JPanel();
+		panel.add(lshow);
+		panel.add(show_cad);
+		panel.add(show_list);
+		
+		frame = new JFrame("Cadastro de Disciplinas");
+		panel.setPreferredSize(new Dimension(400, 100));
+		scrollPane = new JScrollPane(panel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+		        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		frame.add(scrollPane);
+		frame.pack();
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	void formDisciplina(){
+		ldis = new JLabel ("\nNome da disciplina:");
+		tfdis = new JTextField(20);
+		lcar = new JLabel ("\nCarga horaria:"); 
+		tfcar = new JTextField(20);
+		lcur = new JLabel ("\nCurso que ela pertence:"); 
+		tfcur = new JTextField(20);
+		l_qt = new JLabel ("\nNúmero de vagas:");
+		tf_qt = new JTextField(20);
+		lper = new JLabel ("\nPeríodo:");
+		tfper = new JTextField(20);
+		
+		button = new JButton("Salvar");
+		button.addActionListener(this);
+		
+		panel = new JPanel();
+		panel.add(ldis);
+		panel.add(tfdis);
+		panel.add(lcar);
+		panel.add(tfcar);
+		panel.add(lcur);
+		panel.add(tfcur);
+		panel.add(l_qt);
+		panel.add(tf_qt);
+		panel.add(lper);
+		panel.add(tfper);
+		panel.add(button);
+		
+		
+		frame = new JFrame("Cadastro de Dsiciplinas");
+		panel.setPreferredSize(new Dimension(400, 200));
+		scrollPane = new JScrollPane(panel,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+		        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		frame.add(scrollPane);
+		frame.pack();
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+
+	void listDisciplina() {
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	} 
+}	
