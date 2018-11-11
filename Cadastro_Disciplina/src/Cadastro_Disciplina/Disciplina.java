@@ -1,19 +1,11 @@
-package Cadastro_Disciplina;
-
 //******************************************************
-
-//Instituto Federal de São Paulo - Campus Sertãozinho
-
+//Instituto Federal de Sï¿½o Paulo - Campus Sertï¿½ozinho
 //Disciplina......: M3LPBD
-
-//Programação de Computadores e Dispositivos Móveis
-
+//Programaï¿½ï¿½o de Computadores e Dispositivos Mï¿½veis
 //Aluno...........: CAMILA LEITE COURA MARIANO DE OLIVEIRA
-
 //******************************************************
 
-
-
+package Cadastro_Disciplina;
 public class Disciplina {
 	private int id_dis;
 	private String disciplina;
@@ -21,7 +13,17 @@ public class Disciplina {
 	private String curso;
 	private int qt_vagas;
 	private String periodo;
+
+    Disciplina(String disciplina, int carga_horaria, String curso, int qt_vagas, String periodo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 	
+    //aqui quero fazer um construtor onde ou a placa ou a renavam sÃ£o suficientes para remover um veÃ­culo
+	
+	public Disciplina(int id_dis) {
+            //set disciplina para null
+            this(null, null, null, null, null, 0);
+	}
 	
 	public int getId_dis() {
 		return id_dis;
@@ -63,5 +65,10 @@ public class Disciplina {
 	}
 	public void setPeriodo(String periodo) {
 		this.periodo = periodo;
+	}
+        
+        public void add(Disciplina dis) {
+		// TODO Auto-generated method stub
+		
 	}
 }

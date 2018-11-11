@@ -1,10 +1,10 @@
 //******************************************************
 
-//Instituto Federal de São Paulo - Campus Sertãozinho
+//Instituto Federal de Sï¿½o Paulo - Campus Sertï¿½ozinho
 
 //Disciplina......: M3LPBD
 
-//Programação de Computadores e Dispositivos Móveis
+//Programaï¿½ï¿½o de Computadores e Dispositivos Mï¿½veis
 
 //Aluno...........: CAMILA LEITE COURA MARIANO DE OLIVEIRA
 
@@ -16,26 +16,25 @@ import java.sql.*;
 
 public class Principal {
 
-	public static void main(String[] args) throws SQLException {
-		/*	Passo 1 - Testar Conexão
-		 * OBJETIVO: Saber se o banco de dados está 
-		 * conectado para avançar para o Passo 2 ou não	
-		 * */
+    public static void main(String[] args) throws SQLException {
+    /*	Passo 1 - Testar Conexï¿½o
+     * OBJETIVO: Saber se o banco de dados estï¿½ 
+     * conectado para avanï¿½ar para o Passo 2 ou nï¿½o	
+     */
 		
-		/*Connection conn = Conexao.getConnection();
-		if (conn != null) {
-			System.out.println("Conectou!");
-		} else {
-			System.out.println("Não Conectou!");
-		}*/
-		
-		/*	Passo 2 - Após Passo 1, exibir o painel inicial
-		 * Objetivo: Exibir um menu aonde o usuário acesse ou o 
-		 * Cadastro ou a Lista de Disciplinas Cadastradas	
-		 * */
-		new Frame().formDisciplina();
-		
-		new Frame().principal();
-	}
+    //Connection conn = Conexao.getConnection();
+    //if (conn != null) {
+        /*	Passo 2 - Apï¿½s Passo 1, exibir o painel inicial
+        * Objetivo: Exibir um menu aonde o usuï¿½rio acesse ou o 
+        * Cadastro ou a Lista de Disciplinas Cadastradas	
+        */
+        //System.out.println("Conectou!");
+        new Frame().principal();
+        new Frame().formDisciplina();
+        new Frame().listDisciplina();
+    //} else {
+    //    System.out.println("Nï¿½o Conectou!");
+    //}
+    }
 
 }

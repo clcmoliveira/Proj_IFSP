@@ -1,23 +1,80 @@
 //******************************************************
-
-//Instituto Federal de São Paulo - Campus Sertãozinho
-
+//Instituto Federal de Sï¿½o Paulo - Campus Sertï¿½ozinho
 //Disciplina......: M3LPBD
-
-//Programação de Computadores e Dispositivos Móveis
-
+//Programaï¿½ï¿½o de Computadores e Dispositivos Mï¿½veis
 //Aluno...........: CAMILA LEITE COURA MARIANO DE OLIVEIRA
-
 //******************************************************
-
-
 
 package Cadastro_Disciplina;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Funcoes {
-	void addDisciplina() {}
+	void addDisciplina(Disciplina dis) throws SQLException {
+            //1. Especificar o comando sql
+            String sql = "INSERT INTO disciplina "
+                    + "(disciplina, carga_horaria, curso, qt_vagas, periodo) "
+                    + "VALUES (?, ?, ?, ?, ?,?)";
+            Connection conn = null;
+            try{
+		//2. Abrir o canal de comunicaÃ§Ã£o, ou seja, fabricar uma conexÃ£o
+                conn = Conexao.getConnection();
+                //3. prÃ© compilar o comando sql
+		PreparedStatement ps = conn.prepareStatement(sql);
+		//4 Preencher os place holders
+		ps.setString(1, dis.getDisciplina());
+		ps.setInt(2, dis.getCarga_horaria());
+		ps.setString(3, dis.getCurso());
+		ps.setInt(4, dis.getQt_vagas());
+		ps.setString(5, dis.getPeriodo());
+		//5 Executar o comando
+		ps.execute();
+            } catch (SQLException e) {	
+                e.printStackTrace();
+	} finally {
+            Conexao.CloseConnection();	
+        }
+    }
+
+    public List <Disciplina> listar (){
+	List <Disciplina> dis = new ArrayList <> ();
+	String sql = "SELECT * FROM disciplina";
+	try (Connection conn = Conexao.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery()){
+            while (rs.next()) {
+		String disciplina = rs.getString("disciplina");
+		int carga_horaria = rs.getInt ("carga_horaria");
+		String curso = rs.getString("curso");
+		int qt_vagas = rs.getInt ("qt_vagas"); 
+		String periodo = rs.getString("periodo");
+		Disciplina d = new Disciplina(disciplina, carga_horaria, curso, qt_vagas, periodo);
+                d.add(d);
+            }
+	}catch (SQLException e) {
+            e.printStackTrace();
+	} 
+        return dis;	
+    }
 	
-	void listarDisciplina() {}
-	
-	void deletarDisciplina() {}
+    void deletarDisciplina(Disciplina dis) throws SQLException {
+        //1 Especificar o comando sql
+	String sql = "DELETE disciplina WHERE id_dis = ?";
+	//2 Abrir a conexÃ£o com o banco
+	//3 PrÃ© compilar o comando sql
+	try (Connection conn = Conexao.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);){
+            //4 Preencher os place holders
+            ps.setInt(1, dis.getId_dis());
+            //5 executar
+            ps.execute();
+	} catch (SQLException e) {
+            e.printStackTrace();
+	}
+    }
 }
