@@ -14,8 +14,9 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Conexao {
-	/*	Passo 1 - Separando as partes! 
-	*	Objetivo: Aqui separei cada parte dos dados da minha conexão mySQL a Java.
+	/*Passo 1 - 
+	* Como diria Json = vamos por partes! 
+	* Aqui separei cada parte dos dados da minha conexão mySQL a Java.
 	*/
 	
 	private static Connection conn;
@@ -28,7 +29,7 @@ public class Conexao {
 	private static final String pass = "IAULeW0MFdqcdcPF";
 	
 	/*	Passo 2 - Metodo (embora em branco) que possui o mesmo nome da classe. 
-	*	Objetivo: Ele será util no Principal e em Funcoes
+	*	Ele será util no Principal e em Funcoes
 	*/
 	private Conexao() {}
 	

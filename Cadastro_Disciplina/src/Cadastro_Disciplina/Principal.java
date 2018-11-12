@@ -12,24 +12,23 @@ import java.sql.*;
 public class Principal {
 
     public static void main(String[] args) throws SQLException {
-    /*	Passo 1 - Testar Conexão
-     * OBJETIVO: Saber se o banco de dados está 
-     * conectado para avançar para o Passo 2 ou não	
-     */
-		
-    //Connection conn = Conexao.getConnection();
-    //if (conn != null) {
-        /*	Passo 2 - Após Passo 1, exibir o painel inicial
-        * Objetivo: Exibir um menu aonde o usuário acesse ou o 
-        * Cadastro ou a Lista de Disciplinas Cadastradas	
-        */
-        //System.out.println("Conectou!");
-        new Frame().principal();
-        new Frame().formDisciplina();
-        new Frame().listDisciplina();
-    //} else {
-    //    System.out.println("Não Conectou!");
-    //}
+	    /*	Passo 1 - Testar Conexão
+	     * OBJETIVO: Saber se o banco de dados está 
+	     * conectado para avançar para o Passo 2 ou não	
+	     */
+			
+	    Connection conn = Conexao.getConnection();
+	    if (conn != null) {
+	        /*	Passo 2 - Após Passo 1, exibir o painel inicial
+	        * Objetivo: Exibir um menu aonde o usuário acesse ou o 
+	        * Cadastro ou a Lista de Disciplinas Cadastradas	
+	        */
+	        //System.out.println("Conectou!");
+	        new Frame().principal();
+	        new Frame().formDisciplina();
+	        new Frame().listDisciplina();
+	    } else {
+	        System.out.println("Não Conectou!");
+	    }
     }
-
 }

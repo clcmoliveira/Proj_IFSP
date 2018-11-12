@@ -14,9 +14,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Conexao {
-	/*	Passo 1 - Separando as partes! 
-	*	Objetivo: Aqui separei cada parte dos dados da minha conexão mySQL a Java.
-	*/
+	//como diria Json = vamos por partes! Aqui separei cada parte dos dados da minha conexão mySQL a Java.
 	
 	private static Connection conn;
 	private static final String driver = "com.mysql.jdbc.driver";
@@ -27,13 +25,10 @@ public class Conexao {
 	private static final String user = "root";
 	private static final String pass = "IAULeW0MFdqcdcPF";
 	
-	/*	Passo 2 - Metodo (embora em branco) que possui o mesmo nome da classe. 
-	*	Objetivo: Ele será util no Principal e em Funcoes
-	*/
+	//metodo (embora em branco) que possui o mesmo nome da classe. Ele será util no Main e no DAO
 	private Conexao() {}
 	
-	/*	Passo 3 - Iniciando a conexão pelo método getConnection
-	 */
+	//iniciando a conexão pelo método getConnection
 	public static synchronized Connection getConnection() {
 		if (conn == null) {
 			try {
@@ -49,8 +44,8 @@ public class Conexao {
 		return conn;
 	}
 	
-	/*	Passo 4 - Fechando a minha conexão com o método CloseConnection
-	 */
+	//fechando a minha conexão com o método CloseConnection
+	 
     public static boolean CloseConnection() {
         try {
             Conexao.getConnection().close();
@@ -60,8 +55,8 @@ public class Conexao {
         }
     }
  
-    /*	Passo 5 - Reiniciando a minha conexão com o método Restart
- 	*/
+    //reiniciando a minha conexão com o método Restart
+ 
     public static Connection Restart() {
         CloseConnection();
         return Conexao.getConnection();
